@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blobby #000000</title>
+  </head>
+  <body style="background-color: black;">
+    <div style=" text-align: center;">
+
+      <canvas id="canvas" width="600" height="600" >
+
+      </canvas>
+
+        
+      <script src="LZWEncoder.js"></script>
+      <script src="NeuQuant.js"></script>
+      <script src="GIFEncoder.js"></script>
+
+      <img src="BlobbyThing.svg"></img>
+      <script src="GenomesBlobs.js"></script>
+      <script src="Genome.js"></script>
+      <script src="BlobbyGen.js"></script>
+      
+      <script language="JavaScript">
+        //recup param page
+        var parameters = location.search.substring(1).split("A");
+
+        var BlobMaker = new Worker("BlobbyGen.js");
+
+      </script>
+
+    </div>
+  </body>
+</html>
+
