@@ -1,0 +1,66 @@
+<svg width="600px" height="600px" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400"  style="enable-background:new 0 0 400 400;" xml:space="preserve">
+<circle stroke-width="1" fill="#e6e6e6" r="199" cx="200" cy="200" stroke="gray"/>
+          <defs>
+              <filter id='insert-light' x="-40%" y="-40%" width="200%" height="200%">
+              <feOffset dx='2' dy='2' />
+              <feGaussianBlur stdDeviation='1' result='offset-blur' />
+              <feComposite operator='out' in='SourceGraphic' in2='offset-blur' result='inverse' />
+              <feFlood flood-color='white' flood-opacity='.4' result='color' />
+              <feComposite operator='in' in='color' in2='inverse' result='shadow' />
+              <feComposite operator='over' in='shadow' in2='SourceGraphic' />
+              </filter>
+      
+              <filter id="goo" x="-40%" y="-40%" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="5" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 180 -47" result="goo" />
+              </filter>
+      
+              <filter id="Shadow" x="-40%" y="-40%" width="200%" height="200%">
+              <feDiffuseLighting in="SourceGraphic" result="light" lighting-color="white">
+                  <fePointLight x="150" y="150" z="50" />
+              </feDiffuseLighting>
+              <feComposite in="SourceGraphic" in2="light" operator="arithmetic" k1="1" k2="1" k3="0" k4="0"/><!--k2="2"-->
+              <feDropShadow dx="1" dy="1" stdDeviation="1"/>
+              </filter>
+          </defs>
+      
+          <style type="text/css">
+              .BlobStyle{ 
+              stroke:none;
+              }
+              .PathStyle{ 
+              fill:none;
+              }
+              .GooStyle{
+              filter:url(#goo);
+              }
+              .ShadowStyle{
+              filter:url(#Shadow) url(#insert-light);
+              }
+          </style>
+      
+          <g class="ShadowStyle"> 
+              <g id="Graph" class="GooStyle" >  <!---->
+              <g id="Paths">
+              </g>
+      
+              <g id="Blob">
+              </g>
+              </g>
+          </g>
+          <script src="path-data-polyfill.js"></script>
+        <script src="BlobbyGen.js"></script>
+        <script src="Genome.js"></script>
+        <script language="JavaScript">
+          InitInterface("$AE_$E3+E_");
+
+          function MAJ ()
+          {
+            Update();
+            console.log("test");
+          }
+
+          setInterval(MAJ , MicSecPerImage);
+        </script>
+
+      </svg>
