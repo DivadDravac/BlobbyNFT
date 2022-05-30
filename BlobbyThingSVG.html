@@ -42,7 +42,7 @@
         }
 
         var img = new Image();
-        var svg = new Blob([readTextFile("BlobbyThing.svg"), readTextFile("Genome.svg"), readTextFile("GenomesBlobs.svg")], {type: "image/svg+xml"});
+        var svg = new Blob([readTextFile("BlobbyThing.svg"), readTextFile("Genome.js"), readTextFile("GenomesBlobs.js")], {type: "image/svg+xml"});
         var url = URL.createObjectURL(svg);
 
         img.onload = function() {
