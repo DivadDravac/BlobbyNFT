@@ -32,7 +32,7 @@ var url = URL.createObjectURL(svg);
 
 //img.src = url;
 
-importScripts("LZWEncoder.js","NeuQuant.js","GIFEncoder.js","GenomesBlobs.js","Genome.js","BlobbyGen.js","path-data-polyfill.js");
+importScripts("LZWEncoder.js","NeuQuant.js","GIFEncoder.js","GenomesBlobs.js","Genome.js","BlobbyGen.js");//"path-data-polyfill.js"
 
 self.onmessage = function (msg) {
     switch (msg.data.aTopic) {
