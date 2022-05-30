@@ -1,10 +1,10 @@
-importScripts("LZWEncoder.js");
-importScripts("NeuQuant.js");
-importScripts("GIFEncoder.js");
-importScripts("path-data-polyfill.js");
-importScripts("GenomesBlobs.js");
-importScripts("Genome.js");
-importScripts("BlobbyGen.js");
+importScripts("LZWEncoder.js",
+"NeuQuant.js",
+"GIFEncoder.js",
+"path-data-polyfill.js",
+"GenomesBlobs.js",
+"Genome.js",
+"BlobbyGen.js");
 
 function readTextFile(file)
 {
