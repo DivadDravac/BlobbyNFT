@@ -39,12 +39,23 @@ img.onload = function() {
 
 img.src = url;
 
-InitInterface("$AE_$E3+E_");
 
-function MAJ ()
-{
-  Update();
-  console.log("test");
+
+self.onmessage = function (msg) {
+    switch (msg.data.aTopic) {
+        case 'Init':
+            InitInterface("$AE_$E3+E_");
+
+            function MAJ ()
+            {
+              Update();
+              console.log("test");
+            }
+            
+            setInterval(MAJ , MicSecPerImage);
+            break;
+        default:
+            throw 'no aTopic on incoming message to ChromeWorker';
+    }
 }
 
-setInterval(MAJ , MicSecPerImage);
