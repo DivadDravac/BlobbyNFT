@@ -42,7 +42,7 @@
           //encoder.addFrame(ctx);
           //URL.revokeObjectURL(url);
 
-          console.log(img.firstElementChild)
+          console.log(img)
         };
 
         img.src = url;
@@ -51,7 +51,8 @@
 
         var BlobW = new Worker("BlobWorker.js");
 
-        BlobW.postMessage("Init");
+        BlobW.postMessage({aTopic: 'do_sendWorkerArrBuff'});
+        //aBuf: arrBuf },);
 
       </script>
 
