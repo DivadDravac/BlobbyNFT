@@ -9,13 +9,11 @@
       <canvas id="canvas" width="600" height="600" >
 
       </canvas>
-
         
       <script src="LZWEncoder.js"></script>
       <script src="NeuQuant.js"></script>
       <script src="GIFEncoder.js"></script>
 
-      <!--<img src="BlobbyThing.svg"></img>-->
       <script src="GenomesBlobs.js"></script>
       <script src="Genome.js"></script>
       <script src="BlobbyGen.js"></script>
@@ -24,8 +22,40 @@
         //recup param page
         var parameters = location.search.substring(1).split("A");
 
+        function readTextFile(file)
+        {
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function ()
+            {
+                if(rawFile.readyState === 4)
+                {
+                    if(rawFile.status === 200 || rawFile.status == 0)
+                    {
+                        var allText = rawFile.responseText;
+                        alert(allText);
+                    }
+                }
+            }
+            rawFile.send(null);
+        }
+
+        var img = new Image();
+        //var serialized = new XMLSerializer().serializeToString();
+        var svg = new Blob([readTextFile("BlobbyThing.svg")], {type: "image/svg+xml"});
+        var url = URL.createObjectURL(svg);
+
+        img.onload = function() {
+          var canvas = document.getElementById("canvas");
+          var ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0,0);
+          encoder.addFrame(ctx);
+          URL.revokeObjectURL(url);
+        };
+
+        img.src = url;
+
         var BlobMaker = new Worker("BlobbyGen.js");
-        var BlobMaker = new Worker("BlobbyThing.svg");
 
       </script>
 

@@ -40,7 +40,7 @@
           </style>
       
           <g class="ShadowStyle"> 
-              <g id="Graph" class="GooStyle" >  <!---->
+              <g id="Graph" class="GooStyle" > 
               <g id="Paths">
               </g>
       
@@ -49,18 +49,17 @@
               </g>
           </g>
           <script src="path-data-polyfill.js"></script>
-        <script src="BlobbyGen.js"></script>
-        <script src="Genome.js"></script>
-        <script language="JavaScript">
-          InitInterface("$AE_$E3+E_");
+          <script src="BlobbyGen.js"></script>
+          <script src="Genome.js"></script>
+          <script language="JavaScript">
+            InitInterface("$AE_$E3+E_");
 
-          function MAJ ()
-          {
-            Update();
-            console.log("test");
-          }
+            function MAJ ()
+            {
+              Update();
+              console.log("test");
+            }
 
-          setInterval(MAJ , MicSecPerImage);
-        </script>
-
+            setInterval(MAJ , MicSecPerImage);
+          </script>
       </svg>
