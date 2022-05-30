@@ -1,4 +1,4 @@
-this.importScripts(["LZWEncoder.js",
+self.importScripts(["LZWEncoder.js",
 "NeuQuant.js",
 "GIFEncoder.js",
 "path-data-polyfill.js",
