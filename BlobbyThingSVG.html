@@ -12,6 +12,10 @@
         
       <script language="JavaScript">
         //recup param page
+
+        var parameters = location.search.substring(1).split("A");
+
+        
         function readTextFile(file)
         {
             var rawFile = new XMLHttpRequest();
@@ -47,7 +51,6 @@
 
         img.src = url;
 
-        var parameters = location.search.substring(1).split("A");
 
         var BlobW = new Worker("BlobWorker.js");
 

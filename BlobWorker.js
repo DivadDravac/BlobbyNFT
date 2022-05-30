@@ -3,7 +3,7 @@ importScripts("LZWEncoder.js","NeuQuant.js","GIFEncoder.js","GenomesBlobs.js","G
 
 self.onmessage = function (msg) {
     switch (msg.data.aTopic) {
-        case 'Init':
+        case 'InitSVG':
             
             InitInterface("$AE_$E3+E_");
 
@@ -15,6 +15,19 @@ self.onmessage = function (msg) {
             
             setInterval(MAJ , MicSecPerImage);
             break;
+        case 'InitGIF':
+        
+            InitInterface("$AE_$E3+E_");
+
+            function MAJ ()
+            {
+                Update();
+                console.log("test");
+            }
+            
+            setInterval(MAJ , MicSecPerImage);
+            break;
+        
         default:
             console.log("Erreur");
             break;
