@@ -10,9 +10,6 @@
 //   Jarosław Foksa
 // @license
 //   MIT License
-class SVGPathElement extends HTMLElement {}
-
-window.SVGPathElement = SVGPathElement
 
 if (!SVGPathElement.prototype.getPathData || !SVGPathElement.prototype.setPathData) {
   (function() {

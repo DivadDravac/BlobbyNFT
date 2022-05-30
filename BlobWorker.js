@@ -1,4 +1,3 @@
-importScripts("LZWEncoder.js","NeuQuant.js","GIFEncoder.js","path-data-polyfill.js","GenomesBlobs.js","Genome.js","BlobbyGen.js");
 
 function readTextFile(file)
 {
@@ -33,7 +32,7 @@ img.onload = function() {
 
 img.src = url;
 
-
+importScripts("LZWEncoder.js","NeuQuant.js","GIFEncoder.js","path-data-polyfill.js","GenomesBlobs.js","Genome.js","BlobbyGen.js");
 
 self.onmessage = function (msg) {
     switch (msg.data.aTopic) {
