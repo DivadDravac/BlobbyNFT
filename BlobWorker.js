@@ -18,7 +18,7 @@ function readTextFile(file)
     return allText;
 }
 
-var img = new Image();
+//var img = new Image();
 var svg = new Blob([readTextFile("BlobbyThing.svg")], {type: "image/svg+xml"});
 var url = URL.createObjectURL(svg);
 
