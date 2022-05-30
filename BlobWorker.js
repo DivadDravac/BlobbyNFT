@@ -1,10 +1,10 @@
-importScripts(["LZWEncoder.js",
-"NeuQuant.js",
-"GIFEncoder.js",
-"path-data-polyfill.js",
-"GenomesBlobs.js",
-"Genome.js",
-"BlobbyGen.js"]);
+importScripts(["https://divaddravac.github.io/BlobbyNFT/LZWEncoder.js",
+"https://divaddravac.github.io/BlobbyNFT/NeuQuant.js",
+"https://divaddravac.github.io/BlobbyNFT/GIFEncoder.js",
+"https://divaddravac.github.io/BlobbyNFT/path-data-polyfill.js",
+"https://divaddravac.github.io/BlobbyNFT/GenomesBlobs.js",
+"https://divaddravac.github.io/BlobbyNFT/Genome.js",
+"https://divaddravac.github.io/BlobbyNFT/BlobbyGen.js"]);
 
 function readTextFile(file)
 {
