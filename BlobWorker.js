@@ -7,7 +7,6 @@ self.onmessage = function (msg) {
             
             InitInterface("$AE_$E3+E_");
 
-
             function MAJ ()
             {
               Update();
