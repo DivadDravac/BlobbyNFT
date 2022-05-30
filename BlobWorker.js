@@ -22,17 +22,17 @@ function readTextFile(file)
 var svg = new Blob([readTextFile("BlobbyThing.svg")], {type: "image/svg+xml"});
 var url = URL.createObjectURL(svg);
 
-img.onload = function() {
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
-  ctx.drawImage(img, 0,0);
-  encoder.addFrame(ctx);
-  URL.revokeObjectURL(url);
-};
+//img.onload = function() {
+//  var canvas = document.getElementById("canvas");
+//  var ctx = canvas.getContext("2d");
+//  ctx.drawImage(img, 0,0);
+//  encoder.addFrame(ctx);
+//  URL.revokeObjectURL(url);
+//};
 
-img.src = url;
+//img.src = url;
 
-importScripts("LZWEncoder.js","NeuQuant.js","GIFEncoder.js","path-data-polyfill.js","GenomesBlobs.js","Genome.js","BlobbyGen.js");
+//importScripts("LZWEncoder.js","NeuQuant.js","GIFEncoder.js","path-data-polyfill.js","GenomesBlobs.js","Genome.js","BlobbyGen.js");
 
 self.onmessage = function (msg) {
     switch (msg.data.aTopic) {
