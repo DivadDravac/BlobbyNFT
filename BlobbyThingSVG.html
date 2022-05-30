@@ -34,7 +34,6 @@
                     if(rawFile.status === 200 || rawFile.status == 0)
                     {
                       allText = rawFile.responseText;
-
                     }
                 }
             }
@@ -43,9 +42,7 @@
         }
 
         var img = new Image();
-        //var serialized = new XMLSerializer().serializeToString();
-        //console.log(readTextFile("BlobbyThing.svg"));
-        var svg = new Blob([readTextFile("BlobbyThing.svg")], {type: "image/svg+xml"});
+        var svg = new Blob([readTextFile("BlobbyThing.svg"), readTextFile("Genome.svg"), readTextFile("GenomesBlobs.svg")], {type: "image/svg+xml"});
         var url = URL.createObjectURL(svg);
 
         img.onload = function() {
