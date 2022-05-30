@@ -48,7 +48,7 @@ self.onmessage = function (msg) {
             setInterval(MAJ , MicSecPerImage);
             break;
         default:
-            throw 'no aTopic on incoming message to ChromeWorker';
+            
     }
 }
 
