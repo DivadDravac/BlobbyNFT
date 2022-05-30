@@ -4,7 +4,9 @@ importScripts("LZWEncoder.js","NeuQuant.js","GIFEncoder.js","GenomesBlobs.js","G
 self.onmessage = function (msg) {
     switch (msg.data.aTopic) {
         case 'Init':
+            console.log("Init");
             InitInterface("$AE_$E3+E_");
+
 
             function MAJ ()
             {
