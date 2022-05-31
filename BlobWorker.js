@@ -5,14 +5,13 @@ self.onmessage = function (msg) {
     switch (msg.data.aTopic) {
         case 'InitSVG':
             
-            console.log(msg.data.canvas);
+            console.log(msg.data.canvas.getElementById('Paths'));
 
             InitInterface("$AE_$E3+E_");
 
             function MAJ ()
             {
               Update();
-              
             }
             
             setInterval(MAJ , MicSecPerImage);
