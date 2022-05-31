@@ -10,7 +10,7 @@ self.onmessage = function (msg) {
             function MAJ ()
             {
               Update();
-              console.log(window.E);
+              console.log(msg.canvas);
             }
             
             setInterval(MAJ , MicSecPerImage);

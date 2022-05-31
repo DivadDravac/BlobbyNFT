@@ -66,11 +66,11 @@
 
         var parameters = location.search.substring(1).split("A");
 
-        const offscreen = document.getElementById('canvas').transferControlToOffscreen();
+        var offscreen = document.getElementById('canvas').transferControlToOffscreen();
 
         var BlobW = new Worker("BlobWorker.js");
 
-        BlobW.postMessage({aTopic: 'InitSVG'});
+        BlobW.postMessage({aTopic: 'InitSVG', canvas: offscreen},)[offscreen];
         //aBuf: arrBuf },);
 
       </script>
