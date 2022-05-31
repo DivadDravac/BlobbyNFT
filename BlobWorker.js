@@ -5,8 +5,8 @@ self.onmessage = function (msg) {
     switch (msg.data.aTopic) {
         case 'InitSVG':
             
-            console.log(msg.canvas);
-            
+            console.log(msg.data.canvas);
+
             InitInterface("$AE_$E3+E_");
 
             function MAJ ()
