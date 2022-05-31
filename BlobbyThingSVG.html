@@ -67,10 +67,20 @@
         var parameters = location.search.substring(1).split("A");
 
         var offscreen = document.getElementById('canvas').transferControlToOffscreen();
+        importScripts("LZWEncoder.js","NeuQuant.js","GIFEncoder.js","GenomesBlobs.js","Genome.js","BlobbyGen.js","path-data-polyfill.js");
 
-        var BlobW = new Worker("BlobWorker.js");
+        InitInterface("$AE_$E3+E_");
 
-        BlobW.postMessage({aTopic: 'InitSVG', canvas: offscreen},[offscreen]);
+        function MAJ ()
+        {
+          Update();
+        }
+
+        setInterval(MAJ , MicSecPerImage);
+        
+        //var BlobW = new Worker("BlobWorker.js");
+
+        //BlobW.postMessage({aTopic: 'InitSVG', canvas: offscreen},[offscreen]);
 
       </script>
 
