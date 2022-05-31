@@ -5,7 +5,9 @@ self.onmessage = function (msg) {
     switch (msg.data.aTopic) {
         case 'InitSVG':
             
-            console.log(msg.data.canvas.getElementById('Paths'));
+            var gl = msg.data.canvas.getContext('webgl');
+
+            console.log(gl);
 
             InitInterface("$AE_$E3+E_");
 
