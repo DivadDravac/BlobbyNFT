@@ -6,7 +6,7 @@
   <body style="background-color: black;">
     <div style=" text-align: center;">
 
-      <canvas id="canvas" width="600" height="600" >
+      <canvas id="WorkingCanvas" >
         <svg width="600px" height="600px" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 400"  style="enable-background:new 0 0 400 400;" xml:space="preserve">
           <circle stroke-width="1" fill="#e6e6e6" r="199" cx="200" cy="200" stroke="gray"/>
                     <defs>
@@ -60,7 +60,8 @@
                     
                 </svg>
       </canvas>
-    </svg>
+      <canvas id="ShowingCanvas" width="600" height="600" ></canvas>
+
     <script src="path-data-polyfill.js"></script>
     <script src="GenomesBlobs.js"></script>
     <script src="BlobbyGen.js"></script>
@@ -72,23 +73,38 @@
       <script language="JavaScript">
         //recup param page
 
+        var ImageToGif = document.getElementById('Calque_1');
+
+        var img = new Image();
+        var serialized = new XMLSerializer().serializeToString(ImageToGif);
+        var svg = new Blob([serialized], {type: "image/svg+xml"});
+        var url = URL.createObjectURL(svg);
+
+        img.onload = function() {
+          var canvas = document.getElementById("ShowingCanvas");
+          var ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0,0);
+          //URL.revokeObjectURL(url);
+        };
+
+        img.src = url;
+
         var parameters = location.search.substring(1).split("A");
 
-        var offscreen = document.getElementById('canvas').transferControlToOffscreen();
+        var offscreen = document.getElementById('WorkingCanvas').transferControlToOffscreen();
         
         InitInterface("$AE_$E3+E_");
 
         function MAJ ()
         {
+          
           Update();
+          serialized = new XMLSerializer().serializeToString(ImageToGif);
+          svg = new Blob([serialized], {type: "image/svg+xml"});
         }
 
         setInterval(MAJ , MicSecPerImage);
         
-        //var BlobW = new Worker("BlobWorker.js");
-
-        //BlobW.postMessage({aTopic: 'InitSVG', canvas: offscreen},[offscreen]);
-
       </script>
 
     </div>
