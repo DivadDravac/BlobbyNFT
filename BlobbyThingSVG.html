@@ -62,13 +62,13 @@
       </canvas>
       <canvas id="ShowingCanvas" width="600" height="600" ></canvas>
 
-    <script src="path-data-polyfill.js"></script>
-    <script src="GenomesBlobs.js"></script>
-    <script src="BlobbyGen.js"></script>
-    <script src="Genome.js"></script>
-    <script src="LZWEncoder.js"></script>
-    <script src="NeuQuant.js"></script>
-    <script src="GIFEncoder.js"></script>
+      <script src="path-data-polyfill.js"></script>
+      <script src="GenomesBlobs.js"></script>
+      <script src="BlobbyGen.js"></script>
+      <script src="Genome.js"></script>
+      <script src="LZWEncoder.js"></script>
+      <script src="NeuQuant.js"></script>
+      <script src="GIFEncoder.js"></script>
 
       <script language="JavaScript">
         //recup param page
@@ -100,10 +100,8 @@
           Update();
           serialized = new XMLSerializer().serializeToString(ImageToGif);
           svg = new Blob([serialized], {type: "image/svg+xml"});
+          url = URL.createObjectURL(svg);
           img.src = url;
-          var canvas = document.getElementById("ShowingCanvas");
-          var ctx = canvas.getContext("2d");
-          ctx.drawImage(img, 0,0);
         }
 
         setInterval(MAJ , MicSecPerImage);
@@ -113,4 +111,3 @@
     </div>
   </body>
 </html>
-
