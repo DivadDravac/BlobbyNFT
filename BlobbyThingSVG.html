@@ -100,7 +100,10 @@
           Update();
           serialized = new XMLSerializer().serializeToString(ImageToGif);
           svg = new Blob([serialized], {type: "image/svg+xml"});
-          img.Update();
+          var canvas = document.getElementById("ShowingCanvas");
+          var ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0,0);
+          
         }
 
         setInterval(MAJ , MicSecPerImage);
