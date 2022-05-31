@@ -84,7 +84,7 @@
           var canvas = document.getElementById("ShowingCanvas");
           var ctx = canvas.getContext("2d");
           ctx.drawImage(img, 0,0);
-          //URL.revokeObjectURL(url);
+          URL.revokeObjectURL(url);
         };
 
         img.src = url;
