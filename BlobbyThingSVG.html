@@ -74,6 +74,7 @@
         //recup param page
 
         var ImageToGif = document.getElementById('Calque_1');
+        var parameters = location.search.substring(1).split("A");
 
         var img = new Image();
         var serialized = new XMLSerializer().serializeToString(ImageToGif);
@@ -88,8 +89,6 @@
         };
 
         img.src = url;
-
-        var parameters = location.search.substring(1).split("A");
 
         var offscreen = document.getElementById('WorkingCanvas').transferControlToOffscreen();
         
