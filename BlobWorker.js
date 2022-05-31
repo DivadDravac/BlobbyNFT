@@ -5,7 +5,7 @@ self.onmessage = function (msg) {
     switch (msg.data.aTopic) {
         case 'InitSVG':
 
-            console.log(msg.data.canvas.getContext('2d').getElementById('Calque_1'));
+            console.log(msg.data.canvas.getElementById('Calque_1'));
 
             InitInterface("$AE_$E3+E_");
 
