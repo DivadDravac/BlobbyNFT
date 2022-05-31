@@ -86,6 +86,7 @@
           var ctx = canvas.getContext("2d");
           ctx.drawImage(img, 0,0);
           URL.revokeObjectURL(url);
+          MAJ ();
         };
 
         img.src = url;
@@ -103,7 +104,7 @@
           img.src = url;
         }
 
-        setInterval(MAJ , 1);
+        //setInterval(MAJ , MicSecPerImage);
         
       </script>
 
