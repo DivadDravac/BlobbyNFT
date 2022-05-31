@@ -7,7 +7,7 @@ self.onmessage = function (msg) {
             
             var gl = msg.data.canvas.getContext('webgl');
 
-            console.log(gl);
+            console.log(msg.data.canvas.firstChild);
 
             InitInterface("$AE_$E3+E_");
 
