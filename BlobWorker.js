@@ -4,8 +4,6 @@ importScripts("LZWEncoder.js","NeuQuant.js","GIFEncoder.js","GenomesBlobs.js","G
 self.onmessage = function (msg) {
     switch (msg.data.aTopic) {
         case 'InitSVG':
-            
-            var gl = msg.data.canvas.getContext('webgl');
 
             console.log(msg.data.canvas.firstChild);
 
