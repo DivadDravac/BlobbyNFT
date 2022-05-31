@@ -97,10 +97,10 @@
 
         function MAJ ()
         {
-          
           Update();
           serialized = new XMLSerializer().serializeToString(ImageToGif);
           svg = new Blob([serialized], {type: "image/svg+xml"});
+          img.Update();
         }
 
         setInterval(MAJ , MicSecPerImage);
